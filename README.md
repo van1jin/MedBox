@@ -1,2 +1,2 @@
-# MedBox
-Simple Übersicht über Notfallmedikamente im Rettungsdienst
+# DISCLAIMER
+Alle Informationen werden nach bestem Wissen und Gewissen zusammengetragen, jedoch kann keine hundertprozentige Richtigkeit aller angaben, insbesondere der Dosierungen gegeben werden. Es sollte sich immer an regionalen Protokollen und Vorgaben orientiert werden. Soweit möglich wird sich hier an den Angaben zu Medikamenten aus den Leitlinien des DBRD (Deutscher Berufsverband Rettungsdienst e.V.) orientiert.
