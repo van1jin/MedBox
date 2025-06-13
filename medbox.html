@@ -1,0 +1,866 @@
+<!--
+SceneTrack; Simple HTML/JS tool for evaluating training scenarios for ems, first-responders and similar
+Copyright (C) 2025  V. J. Föller
+
+This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public Licensealong with this program.  If not, see <https://www.gnu.org/licenses/>.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>MedBox ~ v1.0</title>
+<style>
+.collapsible {
+  background-color: #bfbfbf;
+  color: black;
+  cursor: pointer;
+  padding: 8px;
+  width: 100%;
+  border: none;
+  text-align: center;
+  outline: none;
+  font-size: 25px;
+  margin-top: 3px ;
+  margin-bottom: 3px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.headers {
+  background-color: #d147a3;
+  width: 100%;
+  text-align: center;
+  padding-top: 5px;
+  margin: auto;
+  color: black;
+  border-radius: 10px;
+  font-size: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.active, .collapsible:hover {
+  background-color: #8c8c8c;
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+  margin-bottom: 3px;
+}
+
+.divider {
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.divider::before, .divider::after {
+  flex: 1;
+  content: '';
+  padding: 3px;
+  background-color: #ccccb3;
+  margin: 5px;
+}
+
+.bodystyle {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.footer {
+  color: #404040;
+  text-align: center;
+  font-size: 10px;
+}
+</style>
+</head>
+<body class="bodystyle">
+  <h1 class="headers">Thrombozytenaggregationshemmer</h1>
+  <button type="button" class="collapsible">ASS (i.v.)</button>
+  <div class="content">
+    <div class="divider">Vorliegen</div>
+    <ul>
+      <li>Asprin® i.v. 500mg Trockensubstanz Acetylsalicylsäure + Aqua ad injectabilia</li>
+    </ul>
+    <div class="divider">Indikation</div>
+    <ul>
+      <li>ACS (STEMI / NSTEMI)</li>
+    </ul>
+    <div class="divider">Kontraindikation</div>
+    <ul>
+      <li>Allergie gegen ASS</li>
+      <li>V.a. akute Blutung</li>
+      <li>V.a. akuten Schlaganfall</li>
+      <li>V.a. Aortendissektion</li>
+      <li>bei Kindern (Reye-Syndrom)</li>
+    </ul>
+    <div class="divider">Dosierung</div>
+    <ul>
+      <li>250mg i.v.</li>
+    </ul>
+    <div class="divider">Wirkweise / -Dauer</div>
+    <ul>
+      <li>Thrombozytenaggregationshemmung durch irreversible Hemmung der Cyclooxygenase</li>
+      <li>4-8 Tage</li>
+    </ul>
+    <div class="divider">Nebenwirkungen</div>
+    <ul>
+      <li>Blutungsneigung</li>
+      <li>Magenbeschwerden</li>
+      <li>Magenblutungen</li>
+      <li>Schwindel</li>
+      <li>Ohrensausen</li>
+    </ul>
+    <div class="divider">Sonstiges</div>
+    <ul>
+      <li>Je nach Hersteller u.U. unterschiedliche Dosierung nach Auflösen der Trockensubstanz</li>
+    </ul>
+    <div class="divider">Quellen</div>
+    <ul>
+      <li><a href="https://www.dbrd.de/images/algorithmen/DBRDAlgo25_V10_1_WEB1_1.pdf">DBRD-Leitlinien 2025</a></li>
+      <li>DBRD-/<a href="https://www.mi.niedersachsen.de/startseite/themen/innere_sicherheit/rettungsdienste/landesausschuss-rettungsdienst-94255.html">NUN-Leitlinien 2025</a> - Dosierung</li>
+      <li><a href="https://www.gelbe-liste.de/krankheiten/reye-syndrom">Gelbe Liste - Reye Syndrom</a></li>
+    </ul>
+  </div>
+  <button type="button" class="collapsible">ASS (p.o.)</button>
+  <div class="content">
+    <div class="divider">Vorliegen</div>
+    <ul>
+      <li>Kautablette Aspirin® mit 500mg Acetylsalicylsäure</li>
+    </ul>
+    <div class="divider">Indikation</div>
+    <ul>
+      <li>Allergie gegen ASS</li>
+      <li>V.a. akute Blutung</li>
+      <li>V.a. akuten Schlaganfall</li>
+      <li>V.a. Aortendissektion</li>
+      <li>bei Kindern (Reye-Syndrom)</li>
+    </ul>
+    <div class="divider">Kontraindikation</div>
+    <ul>
+      <li>Allergie gegen ASS</li>
+      <li>V.a. akute Blutung</li>
+      <li>V.a. akuten Schlaganfall</li>
+      <li>V.a. Aortendissektion</li>
+      <li>bei Kindern (Reye-Syndrom)</li>
+    </ul>
+    <div class="divider">Dosierung</div>
+    <ul>
+      <li>½ Tablette p.o.</li>
+    </ul>
+    <div class="divider">Wirkweise / -Dauer</div>
+    <ul>
+      <li>Thrombozytenaggregationshemmung durch irreversible Hemmung der Cyclooxygenase</li>
+      <li>4-8 Tage</li>
+    </ul>
+    <div class="divider">Nebenwirkungen</div>
+    <ul>
+      <li>Blutungsneigung</li>
+      <li>Magenbeschwerden</li>
+      <li>Magenblutungen</li>
+      <li>Schwindel</li>
+      <li>Ohrensausen</li>
+    </ul>
+    <div class="divider">Quellen</div>
+    <ul>
+      <li><a href="https://www.dbrd.de/images/algorithmen/DBRDAlgo25_V10_1_WEB1_1.pdf">DBRD-Leitlinien 2025</a></li>
+      <li>DBRD-/<a href="https://www.mi.niedersachsen.de/startseite/themen/innere_sicherheit/rettungsdienste/landesausschuss-rettungsdienst-94255.html">NUN-Leitlinien 2025</a> - Dosierung</li>
+      <li><a href="https://www.gelbe-liste.de/krankheiten/reye-syndrom">Gelbe Liste - Reye Syndrom</a></li>    
+    </ul>
+  </div>
+  <h1 class="headers">Antikoagulanzien</h1>
+  <button type="button" class="collapsible">Heparin</button>
+  <div class="content">
+    <div class="divider">Vorliegen</div>
+    <ul>
+      <li>Durchstechflasche 25.000I.E. / 5ml</li>
+      <li>Ampulle 5.000I.E. / 1ml</li>
+      <li>andere Dosierungen möglich!<li>
+    </ul>
+    <div class="divider">Indikation</div>
+    <ul>
+      <li>ACS (STEMI / NSTEMI)</li>
+      <li>LAE</li>
+      <li>Arterieller oder venöser Gefäßverschluss</li>
+      <li>Antikoagulation bei Herzrhythmusstörungen</li>
+    </ul>
+    <div class="divider">Kontraindikation</div>
+    <ul>
+      <li>Unverträglichkeit gegen Heparin</li>
+      <li>Vorliegen einer HIT (Heparin-induzierte Thrombozytopenie)</li>
+      <li>V.a. akute Blutung</li>
+      <li>V.a. akuten Schlaganfall</li>
+      <li>V.a. Aortendissektion</li>
+    </ul>
+    <div class="divider">Dosierung</div>
+    <ul>
+      <li>ACS: 5.000I.E. i.v.</li>
+      <li>LAE: 80I.E. / kgKG (DBRD) oder 100I.E. / kgKG (NUN) i.v.</li>
+    </ul>
+    <div class="divider">Wirkweise / -Dauer</div>
+    <ul>
+      <li>Reversible Gerinnungshemmung durch massive Verstärkung der physiologischen Antithrombinwirkung</li>
+      <li>2h</li>
+    </ul>
+    <div class="divider">Nebenwirkungen</div>
+    <ul>
+      <li>Blutungsneigung</li>
+    </ul>
+    <div class="divider">Sonstiges</div>
+    <ul>
+      <li>Antagonisierung mit 1mg Protamin pro 100I.E. Heparin</li>
+    </ul>
+    <div class="divider">Quellen</div>
+    <ul>
+      <li><a href="https://www.dbrd.de/images/algorithmen/DBRDAlgo25_V10_1_WEB1_1.pdf">DBRD-Leitlinien 2025</a></li>
+      <li>DBRD-/<a href="https://www.mi.niedersachsen.de/startseite/themen/innere_sicherheit/rettungsdienste/landesausschuss-rettungsdienst-94255.html">NUN-Leitlinien 2025</a> - Dosierung</li>
+    </ul>
+  </div>
+  <h1 class="headers">Antifibrinolytika</h1>
+  <button type="button" class="collapsible">Tranexamsäure</button>
+  <div class="content">
+    <div class="divider">Vorliegen</div>
+    <ul>
+      <li>1g / 10ml Brechampulle</li>
+      <li>500mg / 5ml Brechampulle</li>
+    </ul>
+    <div class="divider">Indikation</div>
+    <ul>
+      <li>Hämorrhagischer Schock infolge lebensbedrohlicher innerer oder äußerer Blutung bei Therapiebeginn <3h</li>
+      <li>Hämorrhagischer Schock infolge lebensbedrohlicher gynäkologischer Blutung bei Therapiebeginn <3h</li>
+      <li>Lokaltherapie bei Epistaxis über MAD</li>
+      <li>Lokaltherapie bei Epistaxis als Instillation in eine Tamponade</li>
+    </ul>
+    <div class="divider">Kontraindikation</div>
+    <ul>
+      <li>Unverträglichkeit gegen Tranexamsäure</li>
+      <li>akute Thrombosen / Embolien</li>
+      <li>Therapiebeginn bei Indikation hämorrhagischer Schock nach >3h</li>
+    </ul>
+    <div class="divider">Dosierung</div>
+    <ul>
+      <li>Hämorrhagischer Schock: 1g / 10ml Tranexamsäure als Kurzinfusion über 10 Minuten</li>
+      <li>Epistaxis: 0,5mg / 5ml über MAD-Adapter pro Nasenloch oder 0,5mg / 5ml als Instillation intranasal in die Eingelegte Tamponade pro Nasenloch</li>
+    </ul>
+    <div class="divider">Wirkweise / -Dauer</div>
+    <ul>
+      <li>Hemmung der Fibrinolyse (Vermeidung der Hyperfibrinolyse)</li>
+      <li>5-8h</li>
+    </ul>
+    <div class="divider">Nebenwirkungen</div>
+    <ul>
+      <li>Übelkeit / Erbrechen</li>
+      <li>Hypotonie</li>
+      <li>Thromboembolien</li>
+      <li>Sehstörungen</li>
+      <li>Krampfanfälle</li>
+    </ul>
+    <div class="divider">Sonstiges</div>
+    <ul>
+      <li>Die frühzeitige Gabe von Tranexamsäure ist nebenwirkungsarm und beeinflusst das Überleben der Blutungspatienten positiv</li>
+      <li>Im Zweifel Tranexamsäure geben</li>
+      <li>Die Gabe bei einer gastrointestinalen Blutung ist nach aktuellen Studien nicht zu empfehlen</li>
+    </ul>
+    <div class="divider">Quellen</div>
+    <ul>
+      <li><a href="https://www.dbrd.de/images/algorithmen/DBRDAlgo25_V10_1_WEB1_1.pdf">DBRD-Leitlinien 2025</a></li>
+    </ul>
+  </div>
+  <h1 class="headers">Hämostatika</h1>
+  <button type="button" class="collapsible">Chitosan</button>
+  <div class="content">
+    <div class="divider">Vorliegen</div>
+    <ul>
+      <li>Medikamentenbeschichtete Z-gefaltete Gaze 152 x 7,6cm</li>
+    </ul>
+    <div class="divider">Indikation</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Kontraindikation</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Dosierung</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Wirkweise / -Dauer</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Nebenwirkungen</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Sonstiges</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Quellen</div>
+    <ul>
+      <li></li>
+    </ul>
+  </div>
+  <h1 class="headers">Kreislaufwirksame Medikamente</h1>
+  <button type="button" class="collapsible">Adrenalin</button>
+  <div class="content">
+    <div class="divider">Vorliegen</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Indikation</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Kontraindikation</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Dosierung</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Wirkweise / -Dauer</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Nebenwirkungen</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Sonstiges</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Quellen</div>
+    <ul>
+      <li></li>
+    </ul>
+  </div>
+  <button type="button" class="collapsible">Glyceroltrinitrat</button>
+  <div class="content">
+    <div class="divider">Vorliegen</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Indikation</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Kontraindikation</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Dosierung</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Wirkweise / -Dauer</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Nebenwirkungen</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Sonstiges</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Quellen</div>
+    <ul>
+      <li></li>
+    </ul>
+  </div>
+  <button type="button" class="collapsible">Urapidil</button>
+  <div class="content">
+    <div class="divider">Vorliegen</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Indikation</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Kontraindikation</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Dosierung</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Wirkweise / -Dauer</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Nebenwirkungen</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Sonstiges</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Quellen</div>
+    <ul>
+      <li></li>
+    </ul>
+  </div>
+  <button type="button" class="collapsible">Furosemid</button>
+  <div class="content">
+    <div class="divider">Vorliegen</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Indikation</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Kontraindikation</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Dosierung</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Wirkweise / -Dauer</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Nebenwirkungen</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Sonstiges</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Quellen</div>
+    <ul>
+      <li></li>
+    </ul>
+  </div>
+  <h1 class="headers">Infusionslösungen</h1>
+  <button type="button" class="collapsible">Vollelektrolytlösung</button>
+  <div class="content">
+    <div class="divider">Vorliegen</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Indikation</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Kontraindikation</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Dosierung</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Wirkweise / -Dauer</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Nebenwirkungen</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Sonstiges</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Quellen</div>
+    <ul>
+      <li></li>
+    </ul>
+  </div>
+  <button type="button" class="collapsible">NaCl 0,9%</button>
+  <div class="content">
+    <div class="divider">Vorliegen</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Indikation</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Kontraindikation</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Dosierung</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Wirkweise / -Dauer</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Nebenwirkungen</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Sonstiges</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Quellen</div>
+    <ul>
+      <li></li>
+    </ul>
+  </div>
+  <h1 class="headers">Antiarrhythmika</h1>
+  <button type="button" class="collapsible">Lidocain</button>
+  <div class="content">
+    <div class="divider">Vorliegen</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Indikation</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Kontraindikation</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Dosierung</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Wirkweise / -Dauer</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Nebenwirkungen</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Sonstiges</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Quellen</div>
+    <ul>
+      <li></li>
+    </ul>
+  </div>
+  <button type="button" class="collapsible">Amiodaron</button>
+  <div class="content">
+    <div class="divider">Vorliegen</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Indikation</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Kontraindikation</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Dosierung</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Wirkweise / -Dauer</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Nebenwirkungen</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Sonstiges</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Quellen</div>
+    <ul>
+      <li></li>
+    </ul>
+  </div>
+  <button type="button" class="collapsible">Atropin</button>
+  <div class="content">
+    <div class="divider">Vorliegen</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Indikation</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Kontraindikation</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Dosierung</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Wirkweise / -Dauer</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Nebenwirkungen</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Sonstiges</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Quellen</div>
+    <ul>
+      <li></li>
+    </ul>
+  </div>
+  <h1 class="headers">Antiobstruktive Substanzen</h1>
+  <button type="button" class="collapsible">Salbutamol</button>
+  <div class="content">
+    <div class="divider">Vorliegen</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Indikation</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Kontraindikation</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Dosierung</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Wirkweise / -Dauer</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Nebenwirkungen</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Sonstiges</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Quellen</div>
+    <ul>
+      <li></li>
+    </ul>
+  </div>
+  <button type="button" class="collapsible">Prednisolon</button>
+  <div class="content">
+    <div class="divider">Vorliegen</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Indikation</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Kontraindikation</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Dosierung</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Wirkweise / -Dauer</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Nebenwirkungen</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Sonstiges</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Quellen</div>
+    <ul>
+      <li></li>
+    </ul>
+  </div>
+  <h1 class="headers">Antihistaminika</h1>
+  <button type="button" class="collapsible">Clemastin</button>
+  <div class="content">
+    <div class="divider">Vorliegen</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Indikation</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Kontraindikation</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Dosierung</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Wirkweise / -Dauer</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Nebenwirkungen</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Sonstiges</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Quellen</div>
+    <ul>
+      <li></li>
+    </ul>
+  </div>
+  <h1 class="headers">Antiepileptika / Sedativa</h1>
+  <button type="button" class="collapsible">Diazepam</button>
+  <div class="content">
+    <div class="divider">Vorliegen</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Indikation</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Kontraindikation</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Dosierung</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Wirkweise / -Dauer</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Nebenwirkungen</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Sonstiges</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Quellen</div>
+    <ul>
+      <li></li>
+    </ul>
+  </div>
+  <button type="button" class="collapsible">Midazolam</button>
+  <div class="content">
+    <div class="divider">Vorliegen</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Indikation</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Kontraindikation</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Dosierung</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Wirkweise / -Dauer</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Nebenwirkungen</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Sonstiges</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Quellen</div>
+    <ul>
+      <li></li>
+    </ul>
+  </div>
+  <h1 class="headers">Analgetika</h1>
+  <button type="button" class="collapsible">Fentanyl</button>
+  <div class="content">
+    <div class="divider">Vorliegen</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Indikation</div>
+    <ul>
+      <li>Analgetikum zur Narkoseeinleitung</li>
+      <li>Schmerzen mit NRS <= 4</li>
+      <li>Analgetikum</li>
+    </ul>
+    <div class="divider">Kontraindikation</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Dosierung</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Wirkweise / -Dauer</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Nebenwirkungen</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Sonstiges</div>
+    <ul>
+      <li></li>
+    </ul>
+    <div class="divider">Quellen</div>
+    <ul>
+      <li></li>
+    </ul>
+  </div>none
+
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+</script>
+
+</body>
+</html>
+
